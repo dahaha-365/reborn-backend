@@ -1,0 +1,61 @@
+// This is your Prisma schema file,
+// learn more about it in the docs: https://pris.ly/d/prisma-schema
+
+// Looking for ways to speed up your queries, or scale easily with your serverless or edge functions?
+// Try Prisma Accelerate: https://pris.ly/cli/accelerate-init
+
+generator client {
+  provider = "prisma-client"
+  output   = "../generated/prisma"
+}
+
+datasource db {
+  provider = "postgresql"
+}
+
+model AdminUser {
+  id           BigInt   @id @default(autoincrement())
+  email        String   @unique
+  username     String   @unique
+  displayName  String?
+  password     String
+  isSuperAdmin Boolean  @default(false)
+  canLogin     Boolean  @default(true)
+  loginLogs    AdminUserLoginLog[]
+  roles        AdminUserRole[]
+  createdAt    DateTime @default(now())
+  updatedAt    DateTime @updatedAt
+  deletedAt    DateTime?
+}
+
+model AdminUserLoginLog {
+  id           BigInt   @id @default(autoincrement())
+  adminUserId  BigInt
+  adminUser    AdminUser @relation(fields: [adminUserId], references: [id])
+  ip           String
+  userAgent    String
+  createdAt    DateTime @default(now())
+  updatedAt    DateTime @updatedAt
+}
+
+model AdminUserRole {
+  id           BigInt   @id @default(autoincrement())
+  adminUserId  BigInt
+  adminUsers   AdminUser[]
+  role         String
+  slug         String   @unique
+  createdAt    DateTime @default(now())
+  updatedAt    DateTime @updatedAt
+  deletedAt    DateTime?
+}
+
+model AdminUserRoleRel {
+  userId    BigInt
+  roleId    Int
+
+  adminUser AdminUser @relation(fields: [userId], references: [id], onDelete: NoAction)
+  adminUserRole AdminUserRole @relation(fields: [roleId], references: [id], onDelete: NoAction)
+
+  assignedAt DateTime @default(now())
+  assignedBy String?
+}
