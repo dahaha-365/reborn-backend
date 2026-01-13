@@ -1,7 +1,13 @@
-import { execSync } from 'child_process';
-import { writeFileSync } from 'fs';
+import { execSync } from 'node:child_process';
+import { writeFileSync } from 'node:fs';
 
-function getGitInfo() {
+interface GitInfo {
+  commit: string;
+  branch: string;
+  tag: string;
+}
+
+function getGitInfo(): GitInfo {
   try {
     const commit = execSync('git rev-parse HEAD', { encoding: 'utf8' }).trim();
     const branch = execSync('git rev-parse --abbrev-ref HEAD', {
@@ -13,6 +19,7 @@ function getGitInfo() {
     return { commit, branch, tag };
   } catch (error) {
     console.warn('⚠️ Git 不可用，使用备用版本信息');
+    console.error(error);
     return {
       commit: 'unknown',
       branch: 'unknown',
