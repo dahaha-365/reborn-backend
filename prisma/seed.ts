@@ -7,7 +7,7 @@ const pool = new PrismaPg({ connectionString: process.env.DATABASE_URL! });
 const prisma = new PrismaClient({ adapter: pool });
 
 async function main() {
-  console.log(`Start seeding ...`);
+  console.log(`开始生成初始化数据 ...`);
   await prisma.adminUser.upsert({
     where: { email: 'admin@example.com' },
     update: {},
