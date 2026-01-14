@@ -40,7 +40,6 @@ model AdminUserLoginLog {
 
 model AdminUserRole {
   id          BigInt             @id @default(autoincrement())
-  adminUserId BigInt
   adminUsers  AdminUserRoleRel[]
   role        String
   slug        String             @unique

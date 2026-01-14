@@ -772,9 +772,9 @@ export type AdminUserLoginLogScalarFieldEnum = (typeof AdminUserLoginLogScalarFi
 
 export const AdminUserRoleScalarFieldEnum = {
   id: 'id',
-  adminUserId: 'adminUserId',
   role: 'role',
   slug: 'slug',
+  summary: 'summary',
   createdAt: 'createdAt',
   updatedAt: 'updatedAt',
   deletedAt: 'deletedAt'

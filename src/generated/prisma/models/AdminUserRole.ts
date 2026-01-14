@@ -28,19 +28,17 @@ export type AggregateAdminUserRole = {
 
 export type AdminUserRoleAvgAggregateOutputType = {
   id: number | null
-  adminUserId: number | null
 }
 
 export type AdminUserRoleSumAggregateOutputType = {
   id: bigint | null
-  adminUserId: bigint | null
 }
 
 export type AdminUserRoleMinAggregateOutputType = {
   id: bigint | null
-  adminUserId: bigint | null
   role: string | null
   slug: string | null
+  summary: string | null
   createdAt: Date | null
   updatedAt: Date | null
   deletedAt: Date | null
@@ -48,9 +46,9 @@ export type AdminUserRoleMinAggregateOutputType = {
 
 export type AdminUserRoleMaxAggregateOutputType = {
   id: bigint | null
-  adminUserId: bigint | null
   role: string | null
   slug: string | null
+  summary: string | null
   createdAt: Date | null
   updatedAt: Date | null
   deletedAt: Date | null
@@ -58,9 +56,9 @@ export type AdminUserRoleMaxAggregateOutputType = {
 
 export type AdminUserRoleCountAggregateOutputType = {
   id: number
-  adminUserId: number
   role: number
   slug: number
+  summary: number
   createdAt: number
   updatedAt: number
   deletedAt: number
@@ -70,19 +68,17 @@ export type AdminUserRoleCountAggregateOutputType = {
 
 export type AdminUserRoleAvgAggregateInputType = {
   id?: true
-  adminUserId?: true
 }
 
 export type AdminUserRoleSumAggregateInputType = {
   id?: true
-  adminUserId?: true
 }
 
 export type AdminUserRoleMinAggregateInputType = {
   id?: true
-  adminUserId?: true
   role?: true
   slug?: true
+  summary?: true
   createdAt?: true
   updatedAt?: true
   deletedAt?: true
@@ -90,9 +86,9 @@ export type AdminUserRoleMinAggregateInputType = {
 
 export type AdminUserRoleMaxAggregateInputType = {
   id?: true
-  adminUserId?: true
   role?: true
   slug?: true
+  summary?: true
   createdAt?: true
   updatedAt?: true
   deletedAt?: true
@@ -100,9 +96,9 @@ export type AdminUserRoleMaxAggregateInputType = {
 
 export type AdminUserRoleCountAggregateInputType = {
   id?: true
-  adminUserId?: true
   role?: true
   slug?: true
+  summary?: true
   createdAt?: true
   updatedAt?: true
   deletedAt?: true
@@ -197,9 +193,9 @@ export type AdminUserRoleGroupByArgs<ExtArgs extends runtime.Types.Extensions.In
 
 export type AdminUserRoleGroupByOutputType = {
   id: bigint
-  adminUserId: bigint
   role: string
   slug: string
+  summary: string | null
   createdAt: Date
   updatedAt: Date
   deletedAt: Date | null
@@ -230,9 +226,9 @@ export type AdminUserRoleWhereInput = {
   OR?: Prisma.AdminUserRoleWhereInput[]
   NOT?: Prisma.AdminUserRoleWhereInput | Prisma.AdminUserRoleWhereInput[]
   id?: Prisma.BigIntFilter<"AdminUserRole"> | bigint | number
-  adminUserId?: Prisma.BigIntFilter<"AdminUserRole"> | bigint | number
   role?: Prisma.StringFilter<"AdminUserRole"> | string
   slug?: Prisma.StringFilter<"AdminUserRole"> | string
+  summary?: Prisma.StringNullableFilter<"AdminUserRole"> | string | null
   createdAt?: Prisma.DateTimeFilter<"AdminUserRole"> | Date | string
   updatedAt?: Prisma.DateTimeFilter<"AdminUserRole"> | Date | string
   deletedAt?: Prisma.DateTimeNullableFilter<"AdminUserRole"> | Date | string | null
@@ -241,9 +237,9 @@ export type AdminUserRoleWhereInput = {
 
 export type AdminUserRoleOrderByWithRelationInput = {
   id?: Prisma.SortOrder
-  adminUserId?: Prisma.SortOrder
   role?: Prisma.SortOrder
   slug?: Prisma.SortOrder
+  summary?: Prisma.SortOrderInput | Prisma.SortOrder
   createdAt?: Prisma.SortOrder
   updatedAt?: Prisma.SortOrder
   deletedAt?: Prisma.SortOrderInput | Prisma.SortOrder
@@ -256,8 +252,8 @@ export type AdminUserRoleWhereUniqueInput = Prisma.AtLeast<{
   AND?: Prisma.AdminUserRoleWhereInput | Prisma.AdminUserRoleWhereInput[]
   OR?: Prisma.AdminUserRoleWhereInput[]
   NOT?: Prisma.AdminUserRoleWhereInput | Prisma.AdminUserRoleWhereInput[]
-  adminUserId?: Prisma.BigIntFilter<"AdminUserRole"> | bigint | number
   role?: Prisma.StringFilter<"AdminUserRole"> | string
+  summary?: Prisma.StringNullableFilter<"AdminUserRole"> | string | null
   createdAt?: Prisma.DateTimeFilter<"AdminUserRole"> | Date | string
   updatedAt?: Prisma.DateTimeFilter<"AdminUserRole"> | Date | string
   deletedAt?: Prisma.DateTimeNullableFilter<"AdminUserRole"> | Date | string | null
@@ -266,9 +262,9 @@ export type AdminUserRoleWhereUniqueInput = Prisma.AtLeast<{
 
 export type AdminUserRoleOrderByWithAggregationInput = {
   id?: Prisma.SortOrder
-  adminUserId?: Prisma.SortOrder
   role?: Prisma.SortOrder
   slug?: Prisma.SortOrder
+  summary?: Prisma.SortOrderInput | Prisma.SortOrder
   createdAt?: Prisma.SortOrder
   updatedAt?: Prisma.SortOrder
   deletedAt?: Prisma.SortOrderInput | Prisma.SortOrder
@@ -284,9 +280,9 @@ export type AdminUserRoleScalarWhereWithAggregatesInput = {
   OR?: Prisma.AdminUserRoleScalarWhereWithAggregatesInput[]
   NOT?: Prisma.AdminUserRoleScalarWhereWithAggregatesInput | Prisma.AdminUserRoleScalarWhereWithAggregatesInput[]
   id?: Prisma.BigIntWithAggregatesFilter<"AdminUserRole"> | bigint | number
-  adminUserId?: Prisma.BigIntWithAggregatesFilter<"AdminUserRole"> | bigint | number
   role?: Prisma.StringWithAggregatesFilter<"AdminUserRole"> | string
   slug?: Prisma.StringWithAggregatesFilter<"AdminUserRole"> | string
+  summary?: Prisma.StringNullableWithAggregatesFilter<"AdminUserRole"> | string | null
   createdAt?: Prisma.DateTimeWithAggregatesFilter<"AdminUserRole"> | Date | string
   updatedAt?: Prisma.DateTimeWithAggregatesFilter<"AdminUserRole"> | Date | string
   deletedAt?: Prisma.DateTimeNullableWithAggregatesFilter<"AdminUserRole"> | Date | string | null
@@ -294,9 +290,9 @@ export type AdminUserRoleScalarWhereWithAggregatesInput = {
 
 export type AdminUserRoleCreateInput = {
   id?: bigint | number
-  adminUserId: bigint | number
   role: string
   slug: string
+  summary?: string | null
   createdAt?: Date | string
   updatedAt?: Date | string
   deletedAt?: Date | string | null
@@ -305,9 +301,9 @@ export type AdminUserRoleCreateInput = {
 
 export type AdminUserRoleUncheckedCreateInput = {
   id?: bigint | number
-  adminUserId: bigint | number
   role: string
   slug: string
+  summary?: string | null
   createdAt?: Date | string
   updatedAt?: Date | string
   deletedAt?: Date | string | null
@@ -316,9 +312,9 @@ export type AdminUserRoleUncheckedCreateInput = {
 
 export type AdminUserRoleUpdateInput = {
   id?: Prisma.BigIntFieldUpdateOperationsInput | bigint | number
-  adminUserId?: Prisma.BigIntFieldUpdateOperationsInput | bigint | number
   role?: Prisma.StringFieldUpdateOperationsInput | string
   slug?: Prisma.StringFieldUpdateOperationsInput | string
+  summary?: Prisma.NullableStringFieldUpdateOperationsInput | string | null
   createdAt?: Prisma.DateTimeFieldUpdateOperationsInput | Date | string
   updatedAt?: Prisma.DateTimeFieldUpdateOperationsInput | Date | string
   deletedAt?: Prisma.NullableDateTimeFieldUpdateOperationsInput | Date | string | null
@@ -327,9 +323,9 @@ export type AdminUserRoleUpdateInput = {
 
 export type AdminUserRoleUncheckedUpdateInput = {
   id?: Prisma.BigIntFieldUpdateOperationsInput | bigint | number
-  adminUserId?: Prisma.BigIntFieldUpdateOperationsInput | bigint | number
   role?: Prisma.StringFieldUpdateOperationsInput | string
   slug?: Prisma.StringFieldUpdateOperationsInput | string
+  summary?: Prisma.NullableStringFieldUpdateOperationsInput | string | null
   createdAt?: Prisma.DateTimeFieldUpdateOperationsInput | Date | string
   updatedAt?: Prisma.DateTimeFieldUpdateOperationsInput | Date | string
   deletedAt?: Prisma.NullableDateTimeFieldUpdateOperationsInput | Date | string | null
@@ -338,9 +334,9 @@ export type AdminUserRoleUncheckedUpdateInput = {
 
 export type AdminUserRoleCreateManyInput = {
   id?: bigint | number
-  adminUserId: bigint | number
   role: string
   slug: string
+  summary?: string | null
   createdAt?: Date | string
   updatedAt?: Date | string
   deletedAt?: Date | string | null
@@ -348,9 +344,9 @@ export type AdminUserRoleCreateManyInput = {
 
 export type AdminUserRoleUpdateManyMutationInput = {
   id?: Prisma.BigIntFieldUpdateOperationsInput | bigint | number
-  adminUserId?: Prisma.BigIntFieldUpdateOperationsInput | bigint | number
   role?: Prisma.StringFieldUpdateOperationsInput | string
   slug?: Prisma.StringFieldUpdateOperationsInput | string
+  summary?: Prisma.NullableStringFieldUpdateOperationsInput | string | null
   createdAt?: Prisma.DateTimeFieldUpdateOperationsInput | Date | string
   updatedAt?: Prisma.DateTimeFieldUpdateOperationsInput | Date | string
   deletedAt?: Prisma.NullableDateTimeFieldUpdateOperationsInput | Date | string | null
@@ -358,9 +354,9 @@ export type AdminUserRoleUpdateManyMutationInput = {
 
 export type AdminUserRoleUncheckedUpdateManyInput = {
   id?: Prisma.BigIntFieldUpdateOperationsInput | bigint | number
-  adminUserId?: Prisma.BigIntFieldUpdateOperationsInput | bigint | number
   role?: Prisma.StringFieldUpdateOperationsInput | string
   slug?: Prisma.StringFieldUpdateOperationsInput | string
+  summary?: Prisma.NullableStringFieldUpdateOperationsInput | string | null
   createdAt?: Prisma.DateTimeFieldUpdateOperationsInput | Date | string
   updatedAt?: Prisma.DateTimeFieldUpdateOperationsInput | Date | string
   deletedAt?: Prisma.NullableDateTimeFieldUpdateOperationsInput | Date | string | null
@@ -368,9 +364,9 @@ export type AdminUserRoleUncheckedUpdateManyInput = {
 
 export type AdminUserRoleCountOrderByAggregateInput = {
   id?: Prisma.SortOrder
-  adminUserId?: Prisma.SortOrder
   role?: Prisma.SortOrder
   slug?: Prisma.SortOrder
+  summary?: Prisma.SortOrder
   createdAt?: Prisma.SortOrder
   updatedAt?: Prisma.SortOrder
   deletedAt?: Prisma.SortOrder
@@ -378,14 +374,13 @@ export type AdminUserRoleCountOrderByAggregateInput = {
 
 export type AdminUserRoleAvgOrderByAggregateInput = {
   id?: Prisma.SortOrder
-  adminUserId?: Prisma.SortOrder
 }
 
 export type AdminUserRoleMaxOrderByAggregateInput = {
   id?: Prisma.SortOrder
-  adminUserId?: Prisma.SortOrder
   role?: Prisma.SortOrder
   slug?: Prisma.SortOrder
+  summary?: Prisma.SortOrder
   createdAt?: Prisma.SortOrder
   updatedAt?: Prisma.SortOrder
   deletedAt?: Prisma.SortOrder
@@ -393,9 +388,9 @@ export type AdminUserRoleMaxOrderByAggregateInput = {
 
 export type AdminUserRoleMinOrderByAggregateInput = {
   id?: Prisma.SortOrder
-  adminUserId?: Prisma.SortOrder
   role?: Prisma.SortOrder
   slug?: Prisma.SortOrder
+  summary?: Prisma.SortOrder
   createdAt?: Prisma.SortOrder
   updatedAt?: Prisma.SortOrder
   deletedAt?: Prisma.SortOrder
@@ -403,7 +398,6 @@ export type AdminUserRoleMinOrderByAggregateInput = {
 
 export type AdminUserRoleSumOrderByAggregateInput = {
   id?: Prisma.SortOrder
-  adminUserId?: Prisma.SortOrder
 }
 
 export type AdminUserRoleScalarRelationFilter = {
@@ -427,9 +421,9 @@ export type AdminUserRoleUpdateOneRequiredWithoutAdminUsersNestedInput = {
 
 export type AdminUserRoleCreateWithoutAdminUsersInput = {
   id?: bigint | number
-  adminUserId: bigint | number
   role: string
   slug: string
+  summary?: string | null
   createdAt?: Date | string
   updatedAt?: Date | string
   deletedAt?: Date | string | null
@@ -437,9 +431,9 @@ export type AdminUserRoleCreateWithoutAdminUsersInput = {
 
 export type AdminUserRoleUncheckedCreateWithoutAdminUsersInput = {
   id?: bigint | number
-  adminUserId: bigint | number
   role: string
   slug: string
+  summary?: string | null
   createdAt?: Date | string
   updatedAt?: Date | string
   deletedAt?: Date | string | null
@@ -463,9 +457,9 @@ export type AdminUserRoleUpdateToOneWithWhereWithoutAdminUsersInput = {
 
 export type AdminUserRoleUpdateWithoutAdminUsersInput = {
   id?: Prisma.BigIntFieldUpdateOperationsInput | bigint | number
-  adminUserId?: Prisma.BigIntFieldUpdateOperationsInput | bigint | number
   role?: Prisma.StringFieldUpdateOperationsInput | string
   slug?: Prisma.StringFieldUpdateOperationsInput | string
+  summary?: Prisma.NullableStringFieldUpdateOperationsInput | string | null
   createdAt?: Prisma.DateTimeFieldUpdateOperationsInput | Date | string
   updatedAt?: Prisma.DateTimeFieldUpdateOperationsInput | Date | string
   deletedAt?: Prisma.NullableDateTimeFieldUpdateOperationsInput | Date | string | null
@@ -473,9 +467,9 @@ export type AdminUserRoleUpdateWithoutAdminUsersInput = {
 
 export type AdminUserRoleUncheckedUpdateWithoutAdminUsersInput = {
   id?: Prisma.BigIntFieldUpdateOperationsInput | bigint | number
-  adminUserId?: Prisma.BigIntFieldUpdateOperationsInput | bigint | number
   role?: Prisma.StringFieldUpdateOperationsInput | string
   slug?: Prisma.StringFieldUpdateOperationsInput | string
+  summary?: Prisma.NullableStringFieldUpdateOperationsInput | string | null
   createdAt?: Prisma.DateTimeFieldUpdateOperationsInput | Date | string
   updatedAt?: Prisma.DateTimeFieldUpdateOperationsInput | Date | string
   deletedAt?: Prisma.NullableDateTimeFieldUpdateOperationsInput | Date | string | null
@@ -514,9 +508,9 @@ export type AdminUserRoleCountOutputTypeCountAdminUsersArgs<ExtArgs extends runt
 
 export type AdminUserRoleSelect<ExtArgs extends runtime.Types.Extensions.InternalArgs = runtime.Types.Extensions.DefaultArgs> = runtime.Types.Extensions.GetSelect<{
   id?: boolean
-  adminUserId?: boolean
   role?: boolean
   slug?: boolean
+  summary?: boolean
   createdAt?: boolean
   updatedAt?: boolean
   deletedAt?: boolean
@@ -526,9 +520,9 @@ export type AdminUserRoleSelect<ExtArgs extends runtime.Types.Extensions.Interna
 
 export type AdminUserRoleSelectCreateManyAndReturn<ExtArgs extends runtime.Types.Extensions.InternalArgs = runtime.Types.Extensions.DefaultArgs> = runtime.Types.Extensions.GetSelect<{
   id?: boolean
-  adminUserId?: boolean
   role?: boolean
   slug?: boolean
+  summary?: boolean
   createdAt?: boolean
   updatedAt?: boolean
   deletedAt?: boolean
@@ -536,9 +530,9 @@ export type AdminUserRoleSelectCreateManyAndReturn<ExtArgs extends runtime.Types
 
 export type AdminUserRoleSelectUpdateManyAndReturn<ExtArgs extends runtime.Types.Extensions.InternalArgs = runtime.Types.Extensions.DefaultArgs> = runtime.Types.Extensions.GetSelect<{
   id?: boolean
-  adminUserId?: boolean
   role?: boolean
   slug?: boolean
+  summary?: boolean
   createdAt?: boolean
   updatedAt?: boolean
   deletedAt?: boolean
@@ -546,15 +540,15 @@ export type AdminUserRoleSelectUpdateManyAndReturn<ExtArgs extends runtime.Types
 
 export type AdminUserRoleSelectScalar = {
   id?: boolean
-  adminUserId?: boolean
   role?: boolean
   slug?: boolean
+  summary?: boolean
   createdAt?: boolean
   updatedAt?: boolean
   deletedAt?: boolean
 }
 
-export type AdminUserRoleOmit<ExtArgs extends runtime.Types.Extensions.InternalArgs = runtime.Types.Extensions.DefaultArgs> = runtime.Types.Extensions.GetOmit<"id" | "adminUserId" | "role" | "slug" | "createdAt" | "updatedAt" | "deletedAt", ExtArgs["result"]["adminUserRole"]>
+export type AdminUserRoleOmit<ExtArgs extends runtime.Types.Extensions.InternalArgs = runtime.Types.Extensions.DefaultArgs> = runtime.Types.Extensions.GetOmit<"id" | "role" | "slug" | "summary" | "createdAt" | "updatedAt" | "deletedAt", ExtArgs["result"]["adminUserRole"]>
 export type AdminUserRoleInclude<ExtArgs extends runtime.Types.Extensions.InternalArgs = runtime.Types.Extensions.DefaultArgs> = {
   adminUsers?: boolean | Prisma.AdminUserRole$adminUsersArgs<ExtArgs>
   _count?: boolean | Prisma.AdminUserRoleCountOutputTypeDefaultArgs<ExtArgs>
@@ -569,9 +563,9 @@ export type $AdminUserRolePayload<ExtArgs extends runtime.Types.Extensions.Inter
   }
   scalars: runtime.Types.Extensions.GetPayloadResult<{
     id: bigint
-    adminUserId: bigint
     role: string
     slug: string
+    summary: string | null
     createdAt: Date
     updatedAt: Date
     deletedAt: Date | null
@@ -1000,9 +994,9 @@ export interface Prisma__AdminUserRoleClient<T, Null = never, ExtArgs extends ru
  */
 export interface AdminUserRoleFieldRefs {
   readonly id: Prisma.FieldRef<"AdminUserRole", 'BigInt'>
-  readonly adminUserId: Prisma.FieldRef<"AdminUserRole", 'BigInt'>
   readonly role: Prisma.FieldRef<"AdminUserRole", 'String'>
   readonly slug: Prisma.FieldRef<"AdminUserRole", 'String'>
+  readonly summary: Prisma.FieldRef<"AdminUserRole", 'String'>
   readonly createdAt: Prisma.FieldRef<"AdminUserRole", 'DateTime'>
   readonly updatedAt: Prisma.FieldRef<"AdminUserRole", 'DateTime'>
   readonly deletedAt: Prisma.FieldRef<"AdminUserRole", 'DateTime'>

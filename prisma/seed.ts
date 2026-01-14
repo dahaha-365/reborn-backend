@@ -7,7 +7,16 @@ const pool = new PrismaPg({ connectionString: process.env.DATABASE_URL! });
 const prisma = new PrismaClient({ adapter: pool });
 
 async function main() {
-  console.log(`开始生成初始化数据 ...`);
+  console.log(`Begin seeding ...`);
+  const superAdminRole = await prisma.adminUserRole.upsert({
+    where: { slug: 'super_admin' },
+    update: {},
+    create: {
+      slug: 'super_admin',
+      role: 'Super Admin',
+      summary: 'Super administrator has full access to the system.',
+    },
+  });
   await prisma.adminUser.upsert({
     where: { email: 'admin@example.com' },
     update: {},
@@ -18,6 +27,12 @@ async function main() {
       password: bcrypt.hashSync('123456', 10),
       isSuperAdmin: true,
       canLogin: true,
+      roles: {
+        create: {
+          roleId: superAdminRole.id,
+          assignedBy: 'interactive-seed',
+        },
+      },
     },
   });
 }
