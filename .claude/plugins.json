@@ -1,65 +1,21 @@
 {
   "version": 1,
-  "lastUpdated": 1768544122444,
+  "lastUpdated": 1768893764422,
   "plugins": [
     {
-      "filename": "typescript-pro.md",
-      "type": "agent",
-      "metadata": {
-        "sourcePath": "agents\\programming-languages\\typescript-pro.md",
-        "filename": "typescript-pro.md",
-        "name": "typescript-pro",
-        "description": "Write idiomatic TypeScript with advanced type system features, strict typing, and modern patterns. Masters generic constraints, conditional types, and type inference. Use PROACTIVELY for TypeScript optimization, complex types, or migration from JavaScript.",
-        "tools": [
-          "Read",
-          "Write",
-          "Edit",
-          "Bash"
-        ],
-        "category": "programming-languages",
-        "type": "agent",
-        "size": 1597,
-        "contentHash": "1a9b93af3c4b516a69d6a5a982c7883fbbdb72a628844933d9d337a9182a6075",
-        "installedAt": 1768544057761,
-        "updatedAt": 1768544057761
-      }
-    },
-    {
-      "filename": "javascript-pro.md",
-      "type": "agent",
-      "metadata": {
-        "sourcePath": "agents\\programming-languages\\javascript-pro.md",
-        "filename": "javascript-pro.md",
-        "name": "javascript-pro",
-        "description": "Master modern JavaScript with ES6+, async patterns, and Node.js APIs. Handles promises, event loops, and browser/Node compatibility. Use PROACTIVELY for JavaScript optimization, async debugging, or complex JS patterns.",
-        "tools": [
-          "Read",
-          "Write",
-          "Edit",
-          "Bash"
-        ],
-        "category": "programming-languages",
-        "type": "agent",
-        "size": 1239,
-        "contentHash": "6435fbaadcc5840a0b7bdf3537603e7ffebff0c856988107b9f95f86b2a7a301",
-        "installedAt": 1768544119548,
-        "updatedAt": 1768544119548
-      }
-    },
-    {
-      "filename": "mcp-builder",
+      "filename": "skill-creator",
       "type": "skill",
       "metadata": {
-        "sourcePath": "skills\\development\\mcp-builder",
-        "filename": "mcp-builder",
-        "name": "mcp-builder",
-        "description": "Guide for creating high-quality MCP (Model Context Protocol) servers that enable LLMs to interact with external services through well-designed tools. Use when building MCP servers to integrate external APIs or services, whether in Python (FastMCP) or Node/TypeScript (MCP SDK).",
+        "sourcePath": "skills\\development\\skill-creator",
+        "filename": "skill-creator",
+        "name": "skill-creator",
+        "description": "Guide for creating effective skills. This skill should be used when users want to create a new skill (or update an existing skill) that extends Claude's capabilities with specialized knowledge, workflows, or tool integrations.",
         "category": "skills",
         "type": "skill",
-        "size": 147050,
-        "contentHash": "b1010e90adcb8fd6bf57640df34ab6454fbf7e4216e150a4620f7caccadc4e63",
-        "installedAt": 1768544122441,
-        "updatedAt": 1768544122441
+        "size": 39179,
+        "contentHash": "8c0ce23bb87be91f5b0853c2e9815617c3858b63acdddfe5da47d2c2d3a60816",
+        "installedAt": 1768893764417,
+        "updatedAt": 1768893764417
       }
     }
   ]
