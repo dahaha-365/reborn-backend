@@ -13,6 +13,7 @@
 - [ ] 文档模块
 - [ ] 测试模块
 
+```text
 reborn-backend/
 ├── src/
 │   ├── modules/                    # 业务模块（推荐）
@@ -77,3 +78,4 @@ reborn-backend/
 │   └── DEVELOPMENT.md             # 开发指南
 │
 └── ...配置文件
+```
